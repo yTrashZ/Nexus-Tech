@@ -381,7 +381,16 @@
               </select>
               <span class="field__error">Selecione o tipo de negócio.</span>
             </div>
-
+<div class="field">
+              <label for="plano">Plano de interesse</label>
+              <select id="plano" name="plano" required>
+                <option value="" disabled selected>Selecione um plano</option>
+                <option value="Básico - R$ 39,90/mês">Básico - R$ 39,90/mês</option>
+                <option value="Profissional - R$ 69,90/mês">Profissional - R$ 69,90/mês</option>
+                <option value="Premium - R$ 119,90/mês">Premium - R$ 119,90/mês</option>
+              </select>
+              <span class="field__error">Selecione um plano.</span>
+</div>
             <div class="field field--full">
               <label for="descricao">Descrição do negócio</label>
               <textarea id="descricao" name="descricao" rows="3" placeholder="Conte um pouco sobre o seu negócio, sua história e o que te diferencia." required></textarea>
