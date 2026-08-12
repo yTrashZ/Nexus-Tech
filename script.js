@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Nexus Tech — script.js
+   Tech Nexus — script.js
    Nenhuma automação real de criação de sites. Apenas comportamento de interface.
    ========================================================================== */
 
