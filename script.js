@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Wallora Tech — script.js
+   Nexus Tech — script.js
    Nenhuma automação real de criação de sites. Apenas comportamento de interface.
    ========================================================================== */
 
