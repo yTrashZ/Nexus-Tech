@@ -214,3 +214,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 }); 
+/* ------------------------------------------------------------------
+     7. Pré-seleção de plano ao clicar em "Escolher [Plano]"
+     ------------------------------------------------------------------ */
+  document.querySelectorAll('[data-plan-select]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var planoSelect = document.getElementById('plano');
+      if (planoSelect) {
+        planoSelect.value = btn.getAttribute('data-plan-select');
+      }
+    });
+  });
