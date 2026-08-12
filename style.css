@@ -807,3 +807,100 @@ input, select, textarea { font-family: inherit; font-size: 1rem; color: var(--te
   font-size: 0.85rem;
   color: var(--text-dim);
 }
+/* ==========================================================================
+   RESPONSIVIDADE — TELAS MENORES (TABLET E CELULAR)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  .nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px 24px;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav__link {
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav .btn {
+    margin-top: 14px;
+    width: 100%;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero__demo {
+    order: 2;
+  }
+  .ai-badge {
+    left: 16px;
+    font-size: 0.7rem;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .steps::before { display: none; }
+  .steps__item {
+    border-left: none;
+    padding: 0;
+  }
+
+  .audience {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .models {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plans {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .request-form {
+    padding: 24px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .audience {
+    grid-template-columns: 1fr;
+  }
+  .models {
+    grid-template-columns: 1fr;
+  }
+  .hero__proof {
+    gap: 24px;
+  }
+}
