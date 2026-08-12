@@ -776,7 +776,10 @@ input, select, textarea { font-family: inherit; font-size: 1rem; color: var(--te
   color: #FF8A80;
 }
 .field.has-error input,
-.field.ha
+.field.has-error select,
+.field.has-error textarea {
+  border-color: #FF8A80;
+}
 
 .form-message--success {
   background: var(--teal-soft);
