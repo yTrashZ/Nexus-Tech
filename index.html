@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus Tech — Sites profissionais para o seu negócio</title>
+  <meta name="description" content="A Nexus Tech cria sites profissionais para restaurantes, barbearias, lojas e profissionais autônomos. Você envia as informações, nós construímos o site." />
+
+  <!-- Fontes: Space Grotesk (títulos), Inter (texto), JetBrains Mono (rótulos técnicos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+
+      <a href="#inicio" class="logo" aria-label="Nexus Tech - página inicial">
+        <span class="logo__mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="logo__text">Nexus<span class="logo__accent">Tech</span></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#inicio" class="nav__link">Início</a>
+        <a href="#como-funciona" class="nav__link">Como funciona</a>
+        <a href="#modelos" class="nav__link">Modelos</a>
+        <a href="#precos" class="nav__link">Preços</a>
+        <a href="#solicitar" class="btn btn--primary btn--small">Criar meu site</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+
+        <div class="hero__content" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__dot"></span> criação de sites com apoio de inteligência artificial</p>
+
+          <h1 class="hero__title">
+            O site profissional que o seu negócio precisa, sem você escrever uma linha de código.
+          </h1>
+
+          <p class="hero__subtitle">
+            Você conta como é o seu negócio. Nós desenhamos, escrevemos e construímos o site completo —
+            pronto para publicar e para vender por você.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#solicitar" class="btn btn--primary btn--large">Quero criar meu site</a>
+            <a href="#como-funciona" class="btn btn--ghost btn--large">Como funciona</a>
+          </div>
+
+          <div class="hero__proof">
+            <div class="hero__proof-item"><strong>+300</strong><span>negócios atendidos</span></div>
+            <div class="hero__proof-item"><strong>4–7 dias</strong><span>até o site publicado</span></div>
+            <div class="hero__proof-item"><strong>100%</strong><span>feito sob medida</span></div>
+          </div>
+        </div>
+
+        <!-- Demonstração visual: um site sendo "construído" -->
+        <div class="hero__demo" data-reveal>
+          <div class="browser-mock">
+            <div class="browser-mock__bar">
+              <span class="browser-mock__dot"></span>
+              <span class="browser-mock__dot"></span>
+              <span class="browser-mock__dot"></span>
+              <span class="browser-mock__url">seunegocio.com.br</span>
+            </div>
+
+            <div class="browser-mock__screen">
+              <div class="build-block build-block--nav"></div>
+              <div class="build-block build-block--hero-img"></div>
+              <div class="build-block build-block--line build-block--line-lg"></div>
+              <div class="build-block build-block--line build-block--line-md"></div>
+              <div class="build-block build-block--btn"></div>
+              <div class="build-block build-block--card"></div>
+              <div class="build-block build-block--card"></div>
+              <div class="build-block build-block--card"></div>
+            </div>
+          </div>
+
+          <div class="ai-badge">
+            <span class="ai-badge__pulse"></span>
+            <span class="ai-badge__text" id="aiBadgeText">gerando site para "Padaria Bom Pão"</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== COMO FUNCIONA ===================== -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> processo</p>
+          <h2 class="section__title">Como funciona</h2>
+          <p class="section__subtitle">Um caminho simples, do primeiro contato até o site no ar.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="steps__item" data-reveal>
+            <span class="steps__index">01</span>
+            <div class="steps__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16M4 6h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="steps__title">Você envia suas informações</h3>
+            <p class="steps__text">Preencha um formulário simples contando sobre o seu negócio, seus serviços e o estilo que você imagina.</p>
+          </li>
+
+          <li class="steps__item" data-reveal>
+            <span class="steps__index">02</span>
+            <div class="steps__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v4M12 17v4M4.2 6.2l2.8 2.8M17 15l2.8 2.8M3 12h4M17 12h4M4.2 17.8L7 15M17 9l2.8-2.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="steps__title">Criamos o seu site</h3>
+            <p class="steps__text">Nossa equipe estrutura o layout, os textos e as imagens do seu site profissional, do zero.</p>
+          </li>
+
+          <li class="steps__item" data-reveal>
+            <span class="steps__index">03</span>
+            <div class="steps__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="steps__title">Você aprova</h3>
+            <p class="steps__text">Mostramos o site pronto para você revisar e pedir os ajustes que quiser antes de publicar.</p>
+          </li>
+
+          <li class="steps__item" data-reveal>
+            <span class="steps__index">04</span>
+            <div class="steps__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="steps__title">Publicamos e entregamos</h3>
+            <p class="steps__text">Colocamos o site no ar e entregamos tudo pronto para o seu negócio começar a vender.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== PARA QUEM É ===================== -->
+    <section class="section section--alt" id="para-quem">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> público</p>
+          <h2 class="section__title">Para quem é a Nexus Tech</h2>
+          <p class="section__subtitle">Feito para quem precisa de presença online forte, sem complicação técnica.</p>
+        </div>
+
+        <div class="audience" data-reveal>
+          <div class="audience__card">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 3v18M5 3c0 3-2 4-2 4M5 3c0 3 2 4 2 4M12 8v13M12 8c-2.5 0-4-2-4-5M12 8c2.5 0 4-2 4-5M19 21V9a3 3 0 013-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Restaurantes</span>
+          </div>
+          <div class="audience__card">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M20 4L8.5 15.5M14.5 14.5L20 20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span>Barbearias</span>
+          </div>
+          <div class="audience__card">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 8l1.5-4h13L20 8M4 8h16M4 8v11a1 1 0 001 1h14a1 1 0 001-1V8M9 12a3 3 0 006 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Lojas</span>
+          </div>
+          <div class="audience__card">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span>Profissionais autônomos</span>
+          </div>
+          <div class="audience__card">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="7" height="11" stroke="currentColor" stroke-width="1.4"/><rect x="14" y="4" width="7" height="17" stroke="currentColor" stroke-width="1.4"/><path d="M6 14h1M6 17h1M17 8h1M17 11h1M17 14h1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span>Pequenas empresas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODELOS ===================== -->
+    <section class="section" id="modelos">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> exemplos</p>
+          <h2 class="section__title">Modelos de site</h2>
+          <p class="section__subtitle">Cada segmento recebe um estilo visual pensado para o seu tipo de negócio.</p>
+        </div>
+
+        <div class="models" data-reveal>
+
+          <article class="model-card model-card--restaurante">
+            <div class="model-card__preview">
+              <div class="model-card__nav"></div>
+              <div class="model-card__hero"></div>
+              <div class="model-card__row">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="model-card__body">
+              <h3>Restaurante</h3>
+              <p>Cardápio em destaque, fotos apetitosas e botão direto para pedidos ou reservas.</p>
+              <span class="model-card__tag">Estilo acolhedor</span>
+            </div>
+          </article>
+
+          <article class="model-card model-card--barbearia">
+            <div class="model-card__preview">
+              <div class="model-card__nav"></div>
+              <div class="model-card__hero"></div>
+              <div class="model-card__row">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="model-card__body">
+              <h3>Barbearia</h3>
+              <p>Visual moderno, galeria de cortes e agendamento em destaque via WhatsApp.</p>
+              <span class="model-card__tag">Estilo urbano</span>
+            </div>
+          </article>
+
+          <article class="model-card model-card--loja">
+            <div class="model-card__preview">
+              <div class="model-card__nav"></div>
+              <div class="model-card__hero"></div>
+              <div class="model-card__row">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="model-card__body">
+              <h3>Loja</h3>
+              <p>Vitrine de produtos organizada, categorias claras e chamadas para venda.</p>
+              <span class="model-card__tag">Estilo vitrine</span>
+            </div>
+          </article>
+
+          <article class="model-card model-card--portfolio">
+            <div class="model-card__preview">
+              <div class="model-card__nav"></div>
+              <div class="model-card__hero"></div>
+              <div class="model-card__row">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="model-card__body">
+              <h3>Portfólio</h3>
+              <p>Apresentação profissional de trabalhos, serviços e formas de contato.</p>
+              <span class="model-card__tag">Estilo autoral</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PREÇOS ===================== -->
+    <section class="section section--alt" id="precos">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> investimento</p>
+          <h2 class="section__title">Planos e preços</h2>
+          <p class="section__subtitle">Valores iniciais — ajuste os números abaixo quando definir sua tabela final.</p>
+        </div>
+
+        <!--
+          DICA: para alterar os preços, edite apenas o conteúdo dentro de <span class="plan__price-value">.
+          O restante da estrutura (moeda, período) pode continuar igual.
+        -->
+        <div class="plans" data-reveal>
+
+          <article class="plan-card">
+            <h3 class="plan__name">Básico</h3>
+            <p class="plan__desc">Para quem precisa de presença online rápida e direta.</p>
+            <p class="plan__price">
+              <span class="plan__price-currency">R$</span>
+              <span class="plan__price-value">29,90</span>
+              <span class="plan__price-period">/site</span>
+            </p>
+            <ul class="plan__features">
+              <li>Site de 1 página</li>
+              <li>Design responsivo</li>
+              <li>Botão de WhatsApp</li>
+              <li>Até 2 rodadas de ajuste</li>
+            </ul>
+            <a href="#solicitar" class="btn btn--outline btn--block">Escolher Básico</a>
+          </article>
+
+          <article class="plan-card plan-card--featured">
+            <span class="plan__badge">Mais popular</span>
+            <h3 class="plan__name">Profissional</h3>
+            <p class="plan__desc">O mais escolhido por pequenos negócios em crescimento.</p>
+            <p class="plan__price">
+              <span class="plan__price-currency">R$</span>
+              <span class="plan__price-value">59,90</span>
+              <span class="plan__price-period">/site</span>
+            </p>
+            <ul class="plan__features">
+              <li>Site de até 4 páginas</li>
+              <li>Design responsivo premium</li>
+              <li>Integração com redes sociais</li>
+              <li>Botão de WhatsApp e mapa</li>
+              <li>Até 4 rodadas de ajuste</li>
+            </ul>
+            <a href="#solicitar" class="btn btn--primary btn--block">Escolher Profissional</a>
+          </article>
+
+          <article class="plan-card">
+            <h3 class="plan__name">Premium</h3>
+            <p class="plan__desc">Presença completa para negócios que querem se destacar.</p>
+            <p class="plan__price">
+              <span class="plan__price-currency">R$</span>
+              <span class="plan__price-value">99,90</span>
+              <span class="plan__price-period">/site</span>
+            </p>
+            <ul class="plan__features">
+              <li>Site de páginas ilimitadas</li>
+              <li>Design exclusivo sob medida</li>
+              <li>Otimização para buscadores</li>
+              <li>Prioridade na entrega</li>
+              <li>Ajustes ilimitados no período</li>
+            </ul>
+            <a href="#solicitar" class="btn btn--outline btn--block">Escolher Premium</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOLICITE SEU SITE ===================== -->
+    <section class="section section--form" id="solicitar">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> vamos começar</p>
+          <h2 class="section__title">Solicite o seu site</h2>
+          <p class="section__subtitle">Preencha as informações do seu negócio. Retornamos o contato em até 1 dia útil.</p>
+        </div>
+
+        <form class="request-form" id="requestForm" action="https://formspree.io/f/xljrngzr" method="POST" data-reveal novalidate>
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+              <span class="field__error">Informe o seu nome.</span>
+            </div>
+
+            <div class="field">
+              <label for="whatsapp">WhatsApp</label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+              <span class="field__error">Informe um WhatsApp para contato.</span>
+            </div>
+
+            <div class="field">
+              <label for="empresa">Nome da empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nome do seu negócio" required>
+              <span class="field__error">Informe o nome da empresa.</span>
+            </div>
+
+            <div class="field">
+              <label for="tipoNegocio">Tipo de negócio</label>
+              <select id="tipoNegocio" name="tipoNegocio" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="restaurante">Restaurante</option>
+                <option value="barbearia">Barbearia</option>
+                <option value="loja">Loja</option>
+                <option value="autonomo">Profissional autônomo</option>
+                <option value="pequena-empresa">Pequena empresa</option>
+                <option value="outro">Outro</option>
+              </select>
+              <span class="field__error">Selecione o tipo de negócio.</span>
+            </div>
+
+            <div class="field field--full">
+              <label for="descricao">Descrição do negócio</label>
+              <textarea id="descricao" name="descricao" rows="3" placeholder="Conte um pouco sobre o seu negócio, sua história e o que te diferencia." required></textarea>
+              <span class="field__error">Descreva brevemente o seu negócio.</span>
+            </div>
+
+            <div class="field field--full">
+              <label for="servicos">Serviços</label>
+              <textarea id="servicos" name="servicos" rows="2" placeholder="Liste os principais produtos ou serviços oferecidos." required></textarea>
+              <span class="field__error">Liste ao menos um serviço ou produto.</span>
+            </div>
+
+            <div class="field">
+              <label for="instagram">Instagram</label>
+              <input type="text" id="instagram" name="instagram" placeholder="@seunegocio">
+            </div>
+
+            <div class="field">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required>
+              <span class="field__error">Informe a sua cidade.</span>
+            </div>
+
+            <div class="field">
+              <label for="estilo">Estilo desejado</label>
+              <select id="estilo" name="estilo" required>
+                <option value="" disabled selected>Selecione u
