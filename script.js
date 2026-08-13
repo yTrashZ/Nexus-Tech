@@ -213,8 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-}); 
-/* ------------------------------------------------------------------
+  /* ------------------------------------------------------------------
      7. Pré-seleção de plano ao clicar em "Escolher [Plano]"
      ------------------------------------------------------------------ */
   document.querySelectorAll('[data-plan-select]').forEach(function (btn) {
@@ -225,4 +224,108 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-     
+
+  /* ------------------------------------------------------------------
+     8. Formulário "Deixe seu depoimento"
+     Mesmo padrão do formulário principal, com endpoint compartilhado.
+     ------------------------------------------------------------------ */
+  var testimonialForm = document.getElementById('testimonialForm');
+  var testimonialSuccess = document.getElementById('testimonialSuccess');
+  var testimonialError = document.getElementById('testimonialError');
+  var newTestimonialBtn = document.getElementById('newTestimonialBtn');
+  var testimonialSubmitBtn = testimonialForm ? testimonialForm.querySelector('button[type="submit"]') : null;
+
+  function hideTestimonialError() {
+    if (testimonialError) testimonialError.classList.remove('is-visible');
+  }
+
+  function showTestimonialError() {
+    if (testimonialError) {
+      testimonialError.classList.add('is-visible');
+      testimonialError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function setTestimonialSubmitting(isSubmitting) {
+    if (!testimonialSubmitBtn) return;
+    testimonialSubmitBtn.disabled = isSubmitting;
+    testimonialSubmitBtn.classList.toggle('is-loading', isSubmitting);
+  }
+
+  if (testimonialForm) {
+    testimonialForm.querySelectorAll('input, textarea').forEach(function (field) {
+      field.addEventListener('blur', function () { validateField(field); });
+      field.addEventListener('input', function () {
+        var wrapper = field.closest('.field');
+        if (wrapper && wrapper.classList.contains('has-error')) {
+          validateField(field);
+        }
+      });
+    });
+
+    testimonialForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      hideTestimonialError();
+
+      var requiredFields = testimonialForm.querySelectorAll('[required]');
+      var allValid = true;
+
+      requiredFields.forEach(function (field) {
+        if (!validateField(field)) {
+          allValid = false;
+        }
+      });
+
+      if (!allValid) {
+        var firstError = testimonialForm.querySelector('.field.has-error');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+
+      var testimonialData = new FormData(testimonialForm);
+      setTestimonialSubmitting(true);
+
+      fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: testimonialData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            testimonialForm.style.display = 'none';
+            testimonialSuccess.classList.add('is-visible');
+            testimonialSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            return response.json().then(function () {
+              showTestimonialError();
+            });
+          }
+        })
+        .catch(function () {
+          showTestimonialError();
+        })
+        .finally(function () {
+          setTestimonialSubmitting(false);
+        });
+    });
+  }
+
+  if (newTestimonialBtn) {
+    newTestimonialBtn.addEventListener('click', function () {
+      testimonialForm.reset();
+      testimonialForm.querySelectorAll('.field.has-error').forEach(function (wrapper) {
+        wrapper.classList.remove('has-error');
+      });
+
+      hideTestimonialError();
+      testimonialSuccess.classList.remove('is-visible');
+      testimonialForm.style.display = '';
+      testimonialForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+
+});
