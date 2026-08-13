@@ -225,3 +225,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+});
+     
