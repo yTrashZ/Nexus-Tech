@@ -457,7 +457,54 @@
 
       </div>
     </section>
+<!-- ===================== DEIXE SEU DEPOIMENTO ===================== -->
+    <section class="section section--alt" id="depoimento">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> já é nosso cliente?</p>
+          <h2 class="section__title">Deixe seu depoimento</h2>
+          <p class="section__subtitle">Conte como foi sua experiência com a Tech Nexus. Sua opinião pode aparecer aqui no site.</p>
+        </div>
 
+        <form class="request-form testimonial-form" id="testimonialForm" data-reveal novalidate>
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="depNome">Nome</label>
+              <input type="text" id="depNome" name="nome" placeholder="Seu nome completo" required>
+              <span class="field__error">Informe o seu nome.</span>
+            </div>
+
+            <div class="field">
+              <label for="depEmpresa">Nome da empresa</label>
+              <input type="text" id="depEmpresa" name="empresa" placeholder="Nome do seu negócio">
+            </div>
+
+            <div class="field field--full">
+              <label for="depTexto">Seu depoimento</label>
+              <textarea id="depTexto" name="depoimento" rows="4" placeholder="Conte como foi sua experiência com a Tech Nexus." required></textarea>
+              <span class="field__error">Escreva seu depoimento.</span>
+            </div>
+
+            <input type="hidden" name="tipo_envio" value="Depoimento de cliente">
+
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--large btn--block">Enviar depoimento</button>
+        </form>
+
+        <div class="form-message form-message--success" id="testimonialSuccess">
+          <h3>Depoimento enviado, obrigado!</h3>
+          <p>Recebemos sua mensagem. Ela pode aparecer aqui no site em breve.</p>
+          <button type="button" class="btn btn--outline" id="newTestimonialBtn">Enviar outro depoimento</button>
+        </div>
+
+        <div class="form-message form-message--error" id="testimonialError">
+          Não foi possível enviar seu depoimento. Verifique sua conexão e tente novamente.
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <!-- ===================== FOOTER ===================== -->
