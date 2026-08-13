@@ -904,3 +904,13 @@ input, select, textarea { font-family: inherit; font-size: 1rem; color: var(--te
     gap: 24px;
   }
 }
+/* ==========================================================================
+   Aviso de privacidade do formulário
+   ========================================================================== */
+.form-privacy {
+  margin-top: 16px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-align: center;
+  line-height: 1.5;
+}
