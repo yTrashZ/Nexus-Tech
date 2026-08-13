@@ -948,3 +948,7 @@ input, select, textarea { font-family: inherit; font-size: 1rem; color: var(--te
     right: 16px;
   }
 }
+.testimonial-form {
+  max-width: 640px;
+  margin: 0 auto;
+}
