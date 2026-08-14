@@ -891,6 +891,8 @@ input, select, textarea { font-family: inherit; font-size: 1rem; color: var(--te
   }
   .request-form {
     padding: 24px;
+     max-width: 480px;
+  margin: 0 auto;
   }
 
   .section {
