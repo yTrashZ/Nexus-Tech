@@ -954,3 +954,39 @@ input, select, textarea { font-family: inherit; font-size: 1rem; color: var(--te
   max-width: 640px;
   margin: 0 auto;
 }
+/* ==========================================================================
+   Aviso de cookies
+   ========================================================================== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border-strong);
+  padding: 18px 24px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 95;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
+}
+.cookie-banner.is-visible {
+  display: flex;
+}
+.cookie-banner p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  max-width: 640px;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .cookie-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px 20px;
+  }
+}
