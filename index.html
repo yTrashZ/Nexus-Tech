@@ -467,10 +467,17 @@
 <div class="field">
               <label for="plano">Plano de interesse</label>
               <select id="plano" name="plano" required>
-                <option value="" disabled selected>Selecione um plano</option>
-                <option value="Básico - R$ 39,90/mês">Básico - R$ 39,90/mês</option>
-                <option value="Profissional - R$ 69,90/mês">Profissional - R$ 69,90/mês</option>
-                <option value="Premium - R$ 119,90/mês">Premium - R$ 119,90/mês</option>
+  <option value="" disabled selected>Selecione um plano</option>
+  <optgroup label="Mensal">
+    <option value="Básico - R$ 39,90/mês">Básico - R$ 39,90/mês</option>
+    <option value="Profissional - R$ 69,90/mês">Profissional - R$ 69,90/mês</option>
+    <option value="Premium - R$ 119,90/mês">Premium - R$ 119,90/mês</option>
+  </optgroup>
+  <optgroup label="Pagamento único">
+    <option value="Básico (pagamento único) - R$ 497">Básico (pagamento único) - R$ 497</option>
+    <option value="Profissional (pagamento único) - R$ 897">Profissional (pagamento único) - R$ 897</option>
+    <option value="Premium (pagamento único) - R$ 1.497">Premium (pagamento único) - R$ 1.497</option>
+  </optgroup>
               </select>
               <span class="field__error">Selecione um plano.</span>
 </div>
