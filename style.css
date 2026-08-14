@@ -731,7 +731,7 @@ input, select, textarea { font-family: inherit; font-size: 1rem; color: var(--te
   margin-bottom: 30px;
 }
 
-.field { display: flex; flex-direction: column; gap: 8px; }
+.field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .field--full { grid-column: 1 / -1; }
 
 .field label {
