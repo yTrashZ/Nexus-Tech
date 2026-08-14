@@ -224,7 +224,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+/* ------------------------------------------------------------------
+     9. Aviso de cookies (LGPD)
+     ------------------------------------------------------------------ */
+  var cookieBanner = document.getElementById('cookieBanner');
+  var cookieAccept = document.getElementById('cookieAccept');
 
+  if (cookieBanner && !localStorage.getItem('cookiesAceitos')) {
+    cookieBanner.classList.add('is-visible');
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', function () {
+      localStorage.setItem('cookiesAceitos', 'sim');
+      cookieBanner.classList.remove('is-visible');
+    });
+  }
+
+});
   /* ------------------------------------------------------------------
      8. Formulário "Deixe seu depoimento"
      Mesmo padrão do formulário principal, com endpoint compartilhado.
