@@ -240,8 +240,6 @@ document.addEventListener('DOMContentLoaded', function () {
       cookieBanner.classList.remove('is-visible');
     });
   }
-
-});
   /* ------------------------------------------------------------------
      8. Formulário "Deixe seu depoimento"
      Mesmo padrão do formulário principal, com endpoint compartilhado.
