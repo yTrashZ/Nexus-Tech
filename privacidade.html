@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — Tech Nexus</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .policy {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: calc(var(--header-h) + 60px) 24px 100px;
+    }
+    .policy h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 8px;
+    }
+    .policy .updated {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-bottom: 40px;
+    }
+    .policy h2 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      margin: 36px 0 12px;
+      color: var(--teal);
+    }
+    .policy p, .policy li {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .policy ul { padding-left: 20px; margin-bottom: 12px; }
+    .policy a { color: var(--teal); text-decoration: underline; }
+    .policy__back {
+      display: inline-flex;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="index.html" class="logo" aria-label="Tech Nexus - página inicial">
+        <span class="logo__mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="logo__text">Tech<span class="logo__accent">Nexus</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="policy">
+      <a href="index.html" class="policy__back">&larr; Voltar para o início</a>
+
+      <h1>Política de Privacidade</h1>
+      <p class="updated">Última atualização: agosto de 2026</p>
+
+      <p>
+        A Tech Nexus respeita a sua privacidade. Esta página explica quais dados
+        coletamos, para que usamos, e quais são os seus direitos sobre eles,
+        conforme a Lei Geral de Proteção de Dados (LGPD).
+      </p>
+
+      <h2>1. Quais dados coletamos</h2>
+      <p>Coletamos os dados que você nos fornece diretamente ao preencher nossos formulários:</p>
+      <ul>
+        <li>Nome</li>
+        <li>WhatsApp / telefone</li>
+        <li>E-mail</li>
+        <li>Nome da empresa e tipo de negócio</li>
+        <li>Cidade</li>
+        <li>Mensagem ou descrição enviada por você</li>
+      </ul>
+      <p>
+        Também coletamos automaticamente dados de navegação (como páginas
+        visitadas e tempo de permanência) através do Google Analytics, para
+        entender como o site é usado.
+      </p>
+
+      <h2>2. Para que usamos seus dados</h2>
+      <ul>
+        <li>Retornar seu contato sobre o site solicitado ou o serviço de interesse</li>
+        <li>Avaliar e responder às suas dúvidas</li>
+        <li>Melhorar o conteúdo e a experiência do site</li>
+      </ul>
+      <p>Não usamos seus dados para nenhuma outra finalidade além destas.</p>
+
+      <h2>3. Com quem compartilhamos</h2>
+      <p>
+        Seus dados <strong>não são vendidos nem compartilhados</strong> com
+        terceiros para fins de marketing. Utilizamos os seguintes serviços para
+        operar o site, que podem processar dados como parte de sua função:
+      </p>
+      <ul>
+        <li><strong>Formspree</strong> — processa o envio dos formulários de contato</li>
+        <li><strong>Google Analytics</strong> — processa dados de navegação anônimos</li>
+        <li><strong>Vercel</strong> — hospeda o site</li>
+      </ul>
+
+      <h2>4. Cookies</h2>
+      <p>
+        Usamos cookies para lembrar que você já viu nosso aviso de cookies e
+        para o funcionamento do Google Analytics. Você pode limpar os cookies
+        do seu navegador a qualquer momento nas configurações do próprio
+        navegador.
+      </p>
+
+      <h2>5. Seus direitos</h2>
+      <p>De acordo com a LGPD, você pode a qualquer momento solicitar:</p>
+      <ul>
+        <li>Confirmação de que tratamos seus dados</li>
+        <li>Acesso aos dados que temos sobre você</li>
+        <li>Correção de dados incompletos ou desatualizados</li>
+        <li>Exclusão dos seus dados de nossos registros</li>
+      </ul>
+      <p>
+        Para exercer qualquer um desses direitos, entre em contato pelo
+        WhatsApp ou e-mail informados no rodapé do site.
+      </p>
+
+      <h2>6. Alterações nesta política</h2>
+      <p>
+        Esta política pode ser atualizada periodicamente. Recomendamos
+        revisitar esta página de tempos em tempos.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__text">&copy; <span id="year"></span> Tech Nexus. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
