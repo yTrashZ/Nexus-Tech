@@ -12,12 +12,12 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Nexus — Sites profissionais para o seu negócio</title>
+  <title>Tech Nexus — Criação de Sites Profissionais</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <meta name="description" content="A Tech Nexus cria sites profissionais para restaurantes, barbearias, lojas e profissionais autônomos. Você envia as informações, nós construímos o site." />
+  <meta name="description" content="A Tech Nexus cria sites profissionais para restaurantes, barbearias, lojas, profissionais autônomos e pequenas empresas. Você envia as informações, nós construímos o site — sem você precisar programar." />
 <!-- Open Graph: preview ao compartilhar o link -->
-  <meta property="og:title" content="Tech Nexus — Sites profissionais com IA" />
-  <meta property="og:description" content="A Tech Nexus cria sites profissionais para restaurantes, barbearias, lojas e profissionais autônomos. Você envia as informações, nós construímos o site." />
+  <meta property="og:title" content="Tech Nexus — Criação de Sites Profissionais" />
+  <meta property="og:description" content="A Tech Nexus cria sites profissionais para restaurantes, barbearias, lojas, profissionais autônomos e pequenas empresas. Você envia as informações, nós construímos o site." />
   <meta property="og:image" content="https://nexus-tech-navy.vercel.app/preview.png" />
   <meta property="og:url" content="https://nexus-tech-navy.vercel.app" />
   <meta property="og:type" content="website" />
@@ -61,6 +61,7 @@
         <a href="#como-funciona" class="nav__link">Como funciona</a>
         <a href="#modelos" class="nav__link">Modelos</a>
         <a href="#precos" class="nav__link">Preços</a>
+        <a href="#faq" class="nav__link">Dúvidas</a>
         <a href="#solicitar" class="btn btn--primary btn--small">Criar meu site</a>
       </nav>
 
@@ -93,7 +94,7 @@
 
           <div class="hero__actions">
             <a href="#solicitar" class="btn btn--primary btn--large">Quero criar meu site</a>
-            <a href="#como-funciona" class="btn btn--ghost btn--large">Como funciona</a>
+            <a href="#modelos" class="btn btn--ghost btn--large">Ver modelos</a>
           </div>
 
           <div class="hero__proof">
@@ -239,6 +240,7 @@
               <h3>Restaurante</h3>
               <p>Cardápio em destaque, fotos apetitosas e botão direto para pedidos ou reservas.</p>
               <span class="model-card__tag">Estilo acolhedor</span>
+              <button type="button" class="btn btn--outline btn--block model-card__cta" data-model="restaurante" aria-haspopup="dialog">Ver exemplo</button>
             </div>
           </article>
 
@@ -254,6 +256,7 @@
               <h3>Barbearia</h3>
               <p>Visual moderno, galeria de cortes e agendamento em destaque via WhatsApp.</p>
               <span class="model-card__tag">Estilo urbano</span>
+              <button type="button" class="btn btn--outline btn--block model-card__cta" data-model="barbearia" aria-haspopup="dialog">Ver exemplo</button>
             </div>
           </article>
 
@@ -269,6 +272,7 @@
               <h3>Loja</h3>
               <p>Vitrine de produtos organizada, categorias claras e chamadas para venda.</p>
               <span class="model-card__tag">Estilo vitrine</span>
+              <button type="button" class="btn btn--outline btn--block model-card__cta" data-model="loja" aria-haspopup="dialog">Ver exemplo</button>
             </div>
           </article>
 
@@ -284,12 +288,66 @@
               <h3>Portfólio</h3>
               <p>Apresentação profissional de trabalhos, serviços e formas de contato.</p>
               <span class="model-card__tag">Estilo autoral</span>
+              <button type="button" class="btn btn--outline btn--block model-card__cta" data-model="portfolio" aria-haspopup="dialog">Ver exemplo</button>
+            </div>
+          </article>
+
+          <article class="model-card model-card--profissional">
+            <div class="model-card__preview">
+              <div class="model-card__nav"></div>
+              <div class="model-card__hero"></div>
+              <div class="model-card__row">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="model-card__body">
+              <h3>Profissional / autônomo</h3>
+              <p>Apresentação pessoal, serviços prestados, formas de contato e agenda.</p>
+              <span class="model-card__tag">Estilo direto</span>
+              <button type="button" class="btn btn--outline btn--block model-card__cta" data-model="profissional" aria-haspopup="dialog">Ver exemplo</button>
+            </div>
+          </article>
+
+          <article class="model-card model-card--empresa">
+            <div class="model-card__preview">
+              <div class="model-card__nav"></div>
+              <div class="model-card__hero"></div>
+              <div class="model-card__row">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="model-card__body">
+              <h3>Empresa</h3>
+              <p>Apresentação institucional, áreas de atuação e canais de contato corporativo.</p>
+              <span class="model-card__tag">Estilo corporativo</span>
+              <button type="button" class="btn btn--outline btn--block model-card__cta" data-model="empresa" aria-haspopup="dialog">Ver exemplo</button>
             </div>
           </article>
 
         </div>
       </div>
     </section>
+
+    <!-- Modal de prévia dos modelos -->
+    <div class="model-modal" id="modelModal" role="dialog" aria-modal="true" aria-labelledby="modelModalTitle">
+      <div class="model-modal__overlay" id="modelModalOverlay"></div>
+      <div class="model-modal__panel">
+        <button type="button" class="model-modal__close" id="modelModalClose" aria-label="Fechar prévia">&times;</button>
+        <div class="model-modal__preview" id="modelModalPreview">
+          <div class="model-card__nav"></div>
+          <div class="model-card__hero"></div>
+          <div class="model-card__row"><span></span><span></span><span></span></div>
+          <div class="model-card__row"><span></span><span></span><span></span></div>
+        </div>
+        <div class="model-modal__body">
+          <span class="model-card__tag" id="modelModalTag"></span>
+          <h3 id="modelModalTitle"></h3>
+          <p id="modelModalDesc"></p>
+          <ul class="model-modal__list" id="modelModalList"></ul>
+          <a href="#solicitar" class="btn btn--primary btn--block" id="modelModalCta">Quero um site assim</a>
+        </div>
+      </div>
+    </div>
 
     <!-- ===================== PREÇOS ===================== -->
     <section class="section section--alt" id="precos">
@@ -335,283 +393,4 @@
               <li>Site de até 4 páginas</li>
               <li>Design responsivo premium</li>
               <li>Integração com redes sociais</li>
-              <li>Botão de WhatsApp e mapa</li>
-              <li>Até 4 rodadas de ajuste</li>
-            </ul>
-            <a href="#solicitar" class="btn btn--primary btn--block" data-plan-select="Profissional - R$ 69,90/mês">Escolher Profissional</a>
-          </article>
-         
-            <article class="plan-card">
-            <h3 class="plan__name">Premium</h3>
-            <p class="plan__desc">Presença completa para negócios que querem se destacar.</p>
-            <p class="plan__price">
-              <span class="plan__price-currency">R$</span>
-              <span class="plan__price-value">119,90</span>
-              <span class="plan__price-period">/mês</span>
-            </p>
-            <ul class="plan__features">
-              <li>Site de páginas ilimitadas</li>
-              <li>Design exclusivo sob medida</li>
-              <li>Otimização para buscadores</li>
-              <li>Prioridade na entrega</li>
-              <li>Ajustes ilimitados no período</li>
-            </ul>
-            <a href="#solicitar" class="btn btn--outline btn--block" data-plan-select="Premium - R$ 119,90/mês">Escolher Premium</a>
-          </article>
-
-          </div>
-</div>
-    </section>
-<!-- ===================== PAGAMENTO ÚNICO ===================== -->
-    <section class="section" id="precos-unico">
-      <div class="container">
-        <div class="section__head" data-reveal>
-          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> sem mensalidade</p>
-          <h2 class="section__title">Pagamento único</h2>
-          <p class="section__subtitle">Pague uma vez e o site é seu — sem cobrança recorrente.</p>
-        </div>
-
-        <div class="plans" data-reveal>
-
-          <article class="plan-card">
-            <h3 class="plan__name">Básico</h3>
-            <p class="plan__desc">Para quem precisa de presença online rápida e direta.</p>
-            <p class="plan__price">
-              <span class="plan__price-currency">R$</span>
-              <span class="plan__price-value">497</span>
-              <span class="plan__price-period">à vista</span>
-            </p>
-            <ul class="plan__features">
-              <li>Sem mensalidade</li>
-              <li>Site de 1 página</li>
-              <li>Design responsivo</li>
-              <li>Botão de WhatsApp</li>
-              <li>Até 2 rodadas de ajuste</li>
-            </ul>
-            <a href="#solicitar" class="btn btn--outline btn--block" data-plan-select="Básico (pagamento único) - R$ 497">Escolher Básico</a>
-          </article>
-
-          <article class="plan-card plan-card--featured">
-            <span class="plan__badge">Mais popular</span>
-            <h3 class="plan__name">Profissional</h3>
-            <p class="plan__desc">O mais escolhido por pequenos negócios em crescimento.</p>
-            <p class="plan__price">
-              <span class="plan__price-currency">R$</span>
-              <span class="plan__price-value">897</span>
-              <span class="plan__price-period">à vista</span>
-            </p>
-            <ul class="plan__features">
-              <li>Sem mensalidade</li>
-              <li>Site de até 4 páginas</li>
-              <li>Design responsivo premium</li>
-              <li>Integração com redes sociais</li>
-              <li>Botão de WhatsApp e mapa</li>
-              <li>Até 4 rodadas de ajuste</li>
-            </ul>
-            <a href="#solicitar" class="btn btn--primary btn--block" data-plan-select="Profissional (pagamento único) - R$ 897">Escolher Profissional</a>
-          </article>
-
-          <article class="plan-card">
-            <h3 class="plan__name">Premium</h3>
-            <p class="plan__desc">Presença completa para negócios que querem se destacar.</p>
-            <p class="plan__price">
-              <span class="plan__price-currency">R$</span>
-              <span class="plan__price-value">1.497</span>
-              <span class="plan__price-period">à vista</span>
-            </p>
-            <ul class="plan__features">
-              <li>Sem mensalidade</li>
-              <li>Site de páginas ilimitadas</li>
-              <li>Design exclusivo sob medida</li>
-              <li>Otimização para buscadores</li>
-              <li>Prioridade na entrega</li>
-              <li>Ajustes ilimitados no período</li>
-            </ul>
-            <a href="#solicitar" class="btn btn--outline btn--block" data-plan-select="Premium (pagamento único) - R$ 1.497">Escolher Premium</a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-    <!-- ===================== SOLICITE SEU SITE ===================== -->
-    <section class="section section--form" id="solicitar">
-      <div class="container">
-        <div class="section__head" data-reveal>
-          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> vamos começar</p>
-          <h2 class="section__title">Solicite o seu site</h2>
-          <p class="section__subtitle">Preencha as informações do seu negócio. Retornamos o contato em até 1 dia útil.</p>
-        </div>
-
-        <form class="request-form" id="requestForm" action="https://formspree.io/f/xljrngzr" method="POST" data-reveal novalidate>
-<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <div class="form-grid">
-
-            <div class="field">
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-              <span class="field__error">Informe o seu nome.</span>
-            </div>
-
-            <div class="field">
-              <label for="whatsapp">WhatsApp</label>
-              <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
-              <span class="field__error">Informe um WhatsApp para contato.</span>
-            </div>
-
-            <div class="field">
-              <label for="empresa">Nome da empresa</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Nome do seu negócio" required>
-              <span class="field__error">Informe o nome da empresa.</span>
-            </div>
-
-            <div class="field">
-              <label for="tipoNegocio">Tipo de negócio</label>
-              <select id="tipoNegocio" name="tipoNegocio" required>
-                <option value="" disabled selected>Selecione uma opção</option>
-                <option value="restaurante">Restaurante</option>
-                <option value="barbearia">Barbearia</option>
-                <option value="loja">Loja</option>
-                <option value="autonomo">Profissional autônomo</option>
-                <option value="pequena-empresa">Pequena empresa</option>
-                <option value="outro">Outro</option>
-              </select>
-              <span class="field__error">Selecione o tipo de negócio.</span>
-            </div>
-<div class="field">
-              <label for="plano">Plano de interesse</label>
-              <select id="plano" name="plano" required>
-  <option value="" disabled selected>Selecione um plano</option>
-  <optgroup label="Mensal">
-    <option value="Básico - R$ 39,90/mês">Básico - R$ 39,90/mês</option>
-    <option value="Profissional - R$ 69,90/mês">Profissional - R$ 69,90/mês</option>
-    <option value="Premium - R$ 119,90/mês">Premium - R$ 119,90/mês</option>
-  </optgroup>
-  <optgroup label="Pagamento único">
-    <option value="Básico (pagamento único) - R$ 497">Básico (pagamento único) - R$ 497</option>
-    <option value="Profissional (pagamento único) - R$ 897">Profissional (pagamento único) - R$ 897</option>
-    <option value="Premium (pagamento único) - R$ 1.497">Premium (pagamento único) - R$ 1.497</option>
-  </optgroup>
-              </select>
-              <span class="field__error">Selecione um plano.</span>
-</div>
-            <div class="field field--full">
-              <label for="descricao">Descrição do negócio</label>
-              <textarea id="descricao" name="descricao" rows="3" placeholder="Conte um pouco sobre o seu negócio, sua história e o que te diferencia." required></textarea>
-              <span class="field__error">Descreva brevemente o seu negócio.</span>
-            </div>
-
-            <div class="field field--full">
-              <label for="servicos">Serviços</label>
-              <textarea id="servicos" name="servicos" rows="2" placeholder="Liste os principais produtos ou serviços oferecidos." required></textarea>
-              <span class="field__error">Liste ao menos um serviço ou produto.</span>
-            </div>
-
-            <div class="field">
-              <label for="instagram">Instagram</label>
-              <input type="text" id="instagram" name="instagram" placeholder="@seunegocio">
-            </div>
-
-            <div class="field">
-              <label for="cidade">Cidade</label>
-              <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required>
-              <span class="field__error">Informe a sua cidade.</span>
-            </div>
-
-            <div class="field">
-              <label for="estilo">Estilo desejado</label>
-                  <select id="estilo" name="estilo" required>
-                <option value="" disabled selected>Selecione um estilo</option>
-                <option value="moderno">Moderno</option>
-                <option value="classico">Clássico</option>
-                <option value="minimalista">Minimalista</option>
-                <option value="ousado">Ousado e colorido</option>
-              </select>
-              <span class="field__error">Selecione um estilo.</span>
-            </div>
-
-          </div>
-
-          <button type="submit" class="btn btn--primary btn--large btn--block">Enviar solicitação</button>
-<p class="form-privacy">Seus dados são usados apenas para retornar seu contato sobre o site solicitado. Não compartilhamos suas informações com terceiros.</p>
-        </form>
-
-        <div class="form-message form-message--success" id="successMessage">
-          <h3>Solicitação enviada com sucesso!</h3>
-          <p>Recebemos as informações do seu negócio. Nossa equipe vai analisar e retornar o contato em até 1 dia útil.</p>
-          <button type="button" class="btn btn--outline" id="newRequestBtn">Enviar outra solicitação</button>
-        </div>
-
-        <div class="form-message form-message--error" id="formError">
-          Não foi possível enviar sua solicitação. Verifique sua conexão e tente novamente.
-        </div>
-
-      </div>
-    </section>
-<!-- ===================== DEIXE SEU DEPOIMENTO ===================== -->
-    <section class="section section--alt" id="depoimento">
-      <div class="container">
-        <div class="section__head" data-reveal>
-          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> já é nosso cliente?</p>
-          <h2 class="section__title">Deixe seu depoimento</h2>
-          <p class="section__subtitle">Conte como foi sua experiência com a Tech Nexus. Sua opinião pode aparecer aqui no site.</p>
-        </div>
-
-        <form class="request-form testimonial-form" id="testimonialForm" data-reveal novalidate>
-          <div class="form-grid">
-<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-            <div class="field">
-              <label for="depNome">Nome</label>
-              <input type="text" id="depNome" name="nome" placeholder="Seu nome completo" required>
-              <span class="field__error">Informe o seu nome.</span>
-            </div>
-
-            <div class="field">
-              <label for="depEmpresa">Nome da empresa</label>
-              <input type="text" id="depEmpresa" name="empresa" placeholder="Nome do seu negócio">
-            </div>
-
-            <div class="field field--full">
-              <label for="depTexto">Seu depoimento</label>
-              <textarea id="depTexto" name="depoimento" rows="4" placeholder="Conte como foi sua experiência com a Tech Nexus." required></textarea>
-              <span class="field__error">Escreva seu depoimento.</span>
-            </div>
-
-            <input type="hidden" name="tipo_envio" value="Depoimento de cliente">
-
-          </div>
-
-          <button type="submit" class="btn btn--primary btn--large btn--block">Enviar depoimento</button>
-        </form>
-
-        <div class="form-message form-message--success" id="testimonialSuccess">
-          <h3>Depoimento enviado, obrigado!</h3>
-          <p>Recebemos sua mensagem. Ela pode aparecer aqui no site em breve.</p>
-          <button type="button" class="btn btn--outline" id="newTestimonialBtn">Enviar outro depoimento</button>
-        </div>
-
-        <div class="form-message form-message--error" id="testimonialError">
-          Não foi possível enviar seu depoimento. Verifique sua conexão e tente novamente.
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__text">&copy; <span id="year"></span> Tech Nexus. Todos os direitos reservados. — <a href="privacidade.html" style="color:inherit; text-decoration:underline;">Política de Privacidade</a></p>
-    </div>
-  </footer>
-<a href="https://wa.me/5588999516649?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20sites%20da%20Tech%20Nexus." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.29 4.93L2 22l5.29-1.39c1.4.77 3 1.21 4.71 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.92 6.45 17.5 2 12.04 2zm5.87 14.05c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.97-1.28-4.9-4.28-5.05-4.48-.15-.2-1.21-1.6-1.21-3.06 0-1.45.76-2.17 1.03-2.46.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.08.93 2.23.08.15.13.32.03.52-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.76.83 2.06.98.3.15.5.23.57.36.08.13.08.75-.17 1.45z"/>
-  </svg>
-</a>
-  <div class="cookie-banner" id="cookieBanner">
-  <p>Usamos cookies e o Google Analytics para entender como você usa nosso site e melhorar sua experiência.</p>
-  <button type="button" class="btn btn--primary btn--small" id="cookieAccept">Entendi</button>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+ 
