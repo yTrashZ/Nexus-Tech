@@ -135,6 +135,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!submitBtn) return;
     submitBtn.disabled = isSubmitting;
     submitBtn.classList.toggle('is-loading', isSubmitting);
+    var textEl = submitBtn.querySelector('.btn__text');
+    if (textEl) {
+      textEl.textContent = isSubmitting ? 'Enviando...' : 'Enviar solicitação';
+    }
   }
 
   if (form) {
@@ -265,6 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!testimonialSubmitBtn) return;
     testimonialSubmitBtn.disabled = isSubmitting;
     testimonialSubmitBtn.classList.toggle('is-loading', isSubmitting);
+    testimonialSubmitBtn.textContent = isSubmitting ? 'Enviando...' : 'Enviar depoimento';
   }
 
   if (testimonialForm) {
@@ -343,4 +348,125 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ------------------------------------------------------------------
+     10. FAQ (accordion)
+     ------------------------------------------------------------------ */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var question = item.querySelector('.faq-item__question');
+    var answer = item.querySelector('.faq-item__answer');
+
+    question.addEventListener('click', function () {
+      var isOpen = item.classList.contains('is-open');
+
+      document.querySelectorAll('.faq-item.is-open').forEach(function (openItem) {
+        if (openItem !== item) {
+          openItem.classList.remove('is-open');
+          openItem.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+          openItem.querySelector('.faq-item__answer').style.maxHeight = null;
+        }
+      });
+
+      if (isOpen) {
+        item.classList.remove('is-open');
+        question.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('is-open');
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     11. Modal de prévia dos modelos
+     ------------------------------------------------------------------ */
+  var MODELOS_INFO = {
+    restaurante: {
+      titulo: 'Restaurante',
+      tag: 'Estilo acolhedor',
+      desc: 'Um site pensado para quem quer mostrar o cardápio, criar vontade de visitar e facilitar pedidos ou reservas.',
+      itens: ['Cardápio com fotos em destaque', 'Botão direto de reserva ou pedido pelo WhatsApp', 'Seção "sobre" com a história do restaurante', 'Localização e horário de funcionamento']
+    },
+    barbearia: {
+      titulo: 'Barbearia',
+      tag: 'Estilo urbano',
+      desc: 'Visual moderno para valorizar o trabalho, mostrar os cortes e facilitar o agendamento.',
+      itens: ['Galeria de cortes e trabalhos realizados', 'Agendamento em destaque via WhatsApp', 'Lista de serviços e preços', 'Localização e horário de funcionamento']
+    },
+    loja: {
+      titulo: 'Loja',
+      tag: 'Estilo vitrine',
+      desc: 'Uma vitrine digital organizada por categoria, com foco em levar o visitante a comprar.',
+      itens: ['Produtos organizados por categoria', 'Chamadas para venda em destaque', 'Botão de contato/compra pelo WhatsApp', 'Visual adaptado para celular']
+    },
+    portfolio: {
+      titulo: 'Portfólio',
+      tag: 'Estilo autoral',
+      desc: 'Apresentação profissional de trabalhos e serviços, com foco em transmitir credibilidade.',
+      itens: ['Galeria de trabalhos realizados', 'Seção sobre você ou sua equipe', 'Lista de serviços prestados', 'Formas de contato em destaque']
+    },
+    profissional: {
+      titulo: 'Profissional / autônomo',
+      tag: 'Estilo direto',
+      desc: 'Um site simples e direto para quem presta serviços e precisa de presença online confiável.',
+      itens: ['Apresentação pessoal e área de atuação', 'Lista de serviços prestados', 'Formas de contato e agenda', 'Visual limpo e profissional']
+    },
+    empresa: {
+      titulo: 'Empresa',
+      tag: 'Estilo corporativo',
+      desc: 'Presença institucional para empresas que precisam transmitir confiança e organização.',
+      itens: ['Apresentação institucional da empresa', 'Áreas de atuação e diferenciais', 'Canais de contato corporativo', 'Visual sóbrio e profissional']
+    }
+  };
+
+  var modelModal = document.getElementById('modelModal');
+  var modelModalOverlay = document.getElementById('modelModalOverlay');
+  var modelModalClose = document.getElementById('modelModalClose');
+  var modelModalTitle = document.getElementById('modelModalTitle');
+  var modelModalTag = document.getElementById('modelModalTag');
+  var modelModalDesc = document.getElementById('modelModalDesc');
+  var modelModalList = document.getElementById('modelModalList');
+  var modelModalPreview = document.getElementById('modelModalPreview');
+
+  function openModelModal(key) {
+    var info = MODELOS_INFO[key];
+    if (!info || !modelModal) return;
+
+    modelModalTitle.textContent = info.titulo;
+    modelModalTag.textContent = info.tag;
+    modelModalDesc.textContent = info.desc;
+
+    modelModalList.innerHTML = '';
+    info.itens.forEach(function (item) {
+      var li = document.createElement('li');
+      li.textContent = item;
+      modelModalList.appendChild(li);
+    });
+
+    modelModalPreview.className = 'model-modal__preview model-card__preview model-card--' + key;
+
+    modelModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModelModal() {
+    if (!modelModal) return;
+    modelModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.model-card__cta').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openModelModal(btn.getAttribute('data-model'));
+    });
+  });
+
+  if (modelModalClose) modelModalClose.addEventListener('click', closeModelModal);
+  if (modelModalOverlay) modelModalOverlay.addEventListener('click', closeModelModal);
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeModelModal();
+  });
+
 });
+     
